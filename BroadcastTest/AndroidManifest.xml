@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.broadcast"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="7" />
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" >
+     
+    </uses-permission>
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".BroadcastTestActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="NetCheckReceiver" >
+            　<intent-filter>    
+　　　　　　<action android:name="android.net.conn.CONNECTIVITY_CHANGE"></action> //使用过滤器，接收指定action广播
+　　　   </intent-filter>
+        </receiver>
+        <receiver android:name="SdCardReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                 <action android:name="android.intent.action.MEDIA_REMOVED"/>
+                  <action android:name="android.intent.action.ACTION_MEDIA_UNMOUNTED"/>
+                   <action android:name="android.intent.action.ACTION_MEDIA_BAD_REMOVAL"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
