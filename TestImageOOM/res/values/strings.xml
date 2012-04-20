@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ImageDownloader</string>
+    <string name="empty">Loading images...</string>
+    <string name="noTasks">No tasks</string>
+    <string name="random">Random</string>
+    <string name="correct">Correct</string>
+</resources>
