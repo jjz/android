@@ -4,7 +4,7 @@ public class SavePathUtil {
 
 	private String SAVE_ME_PATH;
 	private String SAVE_FRIEND_PATH;
-	private final String APP_PATH = "getcai";
+	private final String APP_PATH = "test";
 	private final String IMAGE_PATH = APP_PATH + "/me/";
 	private final String FRIEND_IMAGE_PATH = APP_PATH + "/friend/me";
 
