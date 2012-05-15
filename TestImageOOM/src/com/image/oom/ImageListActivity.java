@@ -17,6 +17,7 @@
 package com.image.oom;
 
 import android.app.ListActivity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 
@@ -29,10 +30,11 @@ public class ImageListActivity extends ListActivity implements
 
 		setContentView(R.layout.imagelist);
 
-		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+		final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 		radioGroup.setOnCheckedChangeListener(this);
 
 		setListAdapter(new ImageAdapter());
+		
 	}
 
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
