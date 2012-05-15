@@ -16,24 +16,6 @@
 
 package com.image.oom;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.net.http.AndroidHttpClient;
-import android.os.AsyncTask;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.ImageView;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FilterInputStream;
@@ -44,6 +26,25 @@ import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.http.AndroidHttpClient;
+import android.os.AsyncTask;
+import android.os.Handler;
+import android.util.Log;
+import android.widget.ImageView;
 
 public class ImageUtil {
 	private static final String LOG_TAG = "ImageDownloader";
@@ -60,7 +61,9 @@ public class ImageUtil {
 			forceDownload(url, imageView);
 		} else {
 			cancelPotentialDownload(url, imageView);
-			imageView.setImageBitmap(bitmap);
+			// imageView.setImageBitmap(bitmap);
+			Drawable Avater = new BitmapDrawable(bitmap);
+			imageView.setImageDrawable(Avater);
 		}
 	}
 
@@ -259,7 +262,9 @@ public class ImageUtil {
 				BitmapDownloaderTask bitmapDownloaderTask = getBitmapDownloaderTask(imageView);
 
 				if (this == bitmapDownloaderTask) {
-					imageView.setImageBitmap(bitmap);
+					Drawable Avater = new BitmapDrawable(bitmap);
+					imageView.setImageDrawable(Avater);
+					// imageView.setImageBitmap(bitmap);
 				}
 			}
 		}
