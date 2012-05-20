@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sina Weibo -->
+    <string name="app_sina_consumer_key">838435498</string>
+    <string name="app_sina_consumer_secret">2c418e9f114d93264245a14e9624d869</string>
+</resources>

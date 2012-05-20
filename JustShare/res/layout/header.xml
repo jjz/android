@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:gravity="center_vertical"
+  	>
+    <View android:background="#ff666666" android:layout_width="fill_parent" android:layout_height="0.6dip" />
+    <RelativeLayout 
+    	android:orientation="horizontal" 
+    	android:id="@+id/AppAwareHeader" 
+    	android:background="@drawable/gray_gradient" 
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+    	android:gravity="center_vertical"
+    	>
+        <TextView android:textSize="25.0sp" 
+	        android:textStyle="bold" 
+	        android:textColor="#ffffffff" 
+	        android:id="@+id/TextViewAppName" 
+	        android:padding="2.0sp" 
+	        android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content" 
+	        android:layout_marginLeft="2.0sp" 
+	        android:text="@string/app_name"
+         /> 
+        <TextView 
+        	android:textSize="14.0sp" 
+       	 	android:textColor="#ffffffff" 
+       	 	android:id="@+id/TextViewVersion" 
+       	 	android:layout_width="wrap_content" 
+       	 	android:layout_height="wrap_content" 
+       	 	android:text="Just Share it.." 
+       	 	android:layout_toRightOf="@id/TextViewAppName" 
+       	 	android:layout_alignBaseline="@id/TextViewAppName"
+       	 />
+       	 
+         <Button 
+       		android:id="@+id/Button01"
+       		android:layout_height="wrap_content" 
+       		android:layout_width="wrap_content" 
+       		android:text="分享"
+       		android:layout_alignParentRight="true"
+       		android:background="@drawable/titlebutton_bg"
+       		>
+       	</Button>
+    </RelativeLayout>
+    <View android:id="@+id/ViewBorderMain" android:background="#ff456028" android:layout_width="fill_parent" android:layout_height="1.0sp" android:layout_weight="0.0" />
+</LinearLayout>
