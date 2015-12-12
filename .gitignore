@@ -2,3 +2,6 @@
 bin
 R.java
 .DS_Store
+gradlew.bat
+InstantRun/.idea
+InstantRun/gradle
