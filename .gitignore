@@ -5,3 +5,6 @@ R.java
 gradlew.bat
 InstantRun/.idea
 InstantRun/gradle
+Camera/.idea
+Camera/gradle/wrapper
+gradlew
