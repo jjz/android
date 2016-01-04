@@ -371,6 +371,16 @@ public final class CameraManager {
 
                 @Override
                 public void run() {
+                    /***
+                     *  没有设置setPictureSize 导致 预览图片和最后的结果不一致
+                     */
+                    Parameters params = camera.getParameters();
+
+                    params.setPictureFormat(PixelFormat.JPEG);// 图片格式
+                    List<Camera.Size> sizes = params.getSupportedPreviewSizes();
+                    Camera.Size s = sizes.get(0);
+                    params.setPictureSize(s.width, s.height);// 图片大小
+                    camera.setParameters(params);// 将参数设置到我的camera
                     camera.takePicture(mShutterCallback, null, mJpegPictureCallback);
                 }
             }).start();
