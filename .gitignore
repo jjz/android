@@ -1,10 +1,10 @@
 .class
-bin
-R.java
+**/bin
+**/R.java
 .DS_Store
 gradlew.bat
-InstantRun/.idea
-InstantRun/gradle
+**/.idea
+**/gradle
 Camera/.idea
 Camera/gradle/wrapper
 gradlew
