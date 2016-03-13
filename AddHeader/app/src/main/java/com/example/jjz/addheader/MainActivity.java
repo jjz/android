@@ -1,5 +1,6 @@
 package com.example.jjz.addheader;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,10 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btnHeaderOne;
     private Button btnHeaderTwo;
 
-    private ListView lv;
-
-    private TextView tvHeader;
-    private List<String> stringList = Arrays.asList(new String[]{"one", "two", "three"});
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnError = (Button) findViewById(R.id.btn_add_error);
         btnHeaderOne = (Button) findViewById(R.id.btn_add_header_one);
         btnHeaderTwo = (Button) findViewById(R.id.btn_add_header_two);
-        lv = (ListView) findViewById(R.id.lv);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1);
-        adapter.addAll(stringList);
-        lv.setAdapter(adapter);
 
-        tvHeader = (TextView) findViewById(R.id.tv_header);
 
     }
 
@@ -50,23 +42,30 @@ public class MainActivity extends AppCompatActivity {
         btnError.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lv.addHeaderView(tvHeader);
+                Intent intent=new Intent(MainActivity.this,ListViewActivity.class);
+                intent.putExtra(ListViewActivity.LISTVIEW_HEADER_STATUS,ListViewActivity.HEADER_ERROR);
+                startActivity(intent);
+
 
             }
         });
         btnHeaderOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT);
-                tvHeader.setLayoutParams(layoutParams);
-                lv.addHeaderView(tvHeader);
 
+                Intent intent=new Intent(MainActivity.this,ListViewActivity.class);
+                intent.putExtra(ListViewActivity.LISTVIEW_HEADER_STATUS,ListViewActivity.HEADER_ONE);
+                startActivity(intent);
 
             }
         });
         btnHeaderTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent=new Intent(MainActivity.this,ListViewActivity.class);
+                intent.putExtra(ListViewActivity.LISTVIEW_HEADER_STATUS,ListViewActivity.HEADER_TWO);
+                startActivity(intent);
 
             }
         });
