@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -58,7 +57,7 @@ public class ListViewActivity extends Activity {
                 lv.addHeaderView(tvHeader);
                 break;
             case 1:
-                TextView textView=new TextView(ListViewActivity.this);
+                TextView textView = new TextView(ListViewActivity.this);
                 textView.setText("I am header");
                 textView.setTextSize(12);
                 lv.addHeaderView(textView);
