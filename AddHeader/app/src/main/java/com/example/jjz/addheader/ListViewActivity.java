@@ -15,7 +15,6 @@ import java.util.List;
 public class ListViewActivity extends Activity {
 
     public static String LISTVIEW_HEADER_STATUS = "header_status";
-
     public static int HEADER_ERROR = 0;
     public static int HEADER_ONE = 1;
     public static int HEADER_TWO = 2;
@@ -43,12 +42,15 @@ public class ListViewActivity extends Activity {
 
     private void initView() {
         lv = (ListView) findViewById(R.id.lv);
+        tvHeader = (TextView) findViewById(R.id.tv_header);
         initHeader();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_expandable_list_item_1);
         adapter.addAll(stringList);
         lv.setAdapter(adapter);
 
-        tvHeader = (TextView) findViewById(R.id.tv_header);
+
+
+
     }
 
     private void initHeader() {
