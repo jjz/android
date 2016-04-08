@@ -46,18 +46,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void  javaCallJS(){
+    public void javaCallJS() {
         webView.loadUrl("javascript:callFromJava('call from java')");
     }
 
     @Override
     public void onBackPressed() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                javaCallJS();
-            }
-        }).start();
+
+        javaCallJS();
 
     }
 }
