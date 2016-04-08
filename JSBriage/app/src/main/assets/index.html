@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+    function toastClick(){
+        window.AndroidToast.show('from js');
+    }
+    function showAlert(){
+        var str=window.AndroidMessage.getMsg();
+        console.log(str);
+    }
+    function callFromJava(str){
+        console.log(str);
+    }
+
+
+
+
+
+</script>
+<body>
+<input type="button" onClick="toastClick()" value="toast">
+<input type="button" onClick="showAlert()" value="Alert">
+</body>
+
+</html>
