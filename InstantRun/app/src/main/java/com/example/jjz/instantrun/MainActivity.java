@@ -17,12 +17,36 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv;
     private Button btn;
 
+
+    public static final String DEV_URL = "http://dev.domain.com/";
+    public static final String TEST_URL = "http://test.domain.com/";
+    public static final String RELEASE_URL = "http://www.domain.com/";
+    //0  dev
+    //1  test
+    //2  release
+    public static final int ENV_SETTING = BuildConfig.ENV_SETTING;
+
+
+    public static String getBaseUrl() {
+
+        switch (ENV_SETTING) {
+            case 1:
+                return TEST_URL;
+            case 2:
+                return RELEASE_URL;
+            default:
+                return DEV_URL;
+
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
         System.gc();
         tv = (TextView) findViewById(R.id.tv_hello);
-        btn = (Button) findViewById(R.id.button);
+        btn = (Button) findViewById(R.id.btn_test);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         tv.setText(" hello from activity");
-
 
 
         System.out.println("test");
