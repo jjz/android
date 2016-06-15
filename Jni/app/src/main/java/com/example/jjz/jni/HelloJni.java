@@ -5,6 +5,6 @@ public class HelloJni {
         System.loadLibrary("hello");
     }
 
-    public native void sayHello();
+    public native String sayHello();
 
 }
