@@ -5,6 +5,23 @@ model {
     android {
         compileSdkVersion 23
         buildToolsVersion "23.0.2"
+        ndk {
+            moduleName "experiment"
+        }
+        sources {
+            main {
+                jni {
+                    source {
+                        srcDir "src/main/jni"
+                    }
+                }
+                java{
+                    source{
+                        srcDir "src/main/java"
+                    }
+                }
+            }
+        }
 
         defaultConfig {
             applicationId "com.jjz"
