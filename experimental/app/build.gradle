@@ -6,7 +6,7 @@ model {
             // Configure one pre-built lib: shared
             openssl {
                 // Inform Android Studio where header file dir for this lib
-                headers.srcDir "src/main/jin/openssl"
+                headers.srcDir "/usr/local/ssl/android-23/include"
                 // Inform Android Studio where lib is -- each ABI should have a lib file
                 binaries.withType(StaticLibraryBinary) {
                     staticLibraryFile = file("libs/libcrypto.a")
@@ -27,7 +27,7 @@ model {
             toolchain = 'clang'
             //todo 指定cpu
             abiFilters.addAll(['armeabi', 'armeabi-v7a']) //this is default
-           // ldLibs.addAll(['crypto', 'log']);
+            ldLibs.addAll([ 'log']);
         }
         sources {
             main {

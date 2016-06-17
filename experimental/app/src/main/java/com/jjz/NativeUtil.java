@@ -6,4 +6,5 @@ public class NativeUtil {
     }
 
     public static native String firstNative();
+    public static  native byte[] getRandom();
 }
