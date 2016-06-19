@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
     <TextView
+        android:layout_marginTop="10dp"
         android:id="@+id/tv_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
