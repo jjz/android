@@ -3,14 +3,18 @@ apply plugin: "com.android.model.application"
 model {
     repositories{
         libs(PrebuiltLibraries) {
-            // Configure one pre-built lib: shared
+            // Configure one pre-built lib: static
             openssl {
-                // Inform Android Studio where header file dir for this lib
+                // 头文件地址
                 headers.srcDir "/usr/local/ssl/android-23/include"
-                // Inform Android Studio where lib is -- each ABI should have a lib file
+                // 静态类库的引用,
                 binaries.withType(StaticLibraryBinary) {
                     staticLibraryFile = file("libs/libcrypto.a")
                 }
+                //动态类库的引用
+//                binaries.withType(SharedLibraryBinary) {
+//                    sharedLibraryFile = file("libs/libcrypto.so")
+//                }
             }
 
 
@@ -23,8 +27,8 @@ model {
         buildToolsVersion "23.0.2"
         ndk {
             moduleName "experiment"
-            stl = 'gnustl_static'
-            toolchain = 'clang'
+            //stl = 'gnustl_static'
+            //toolchain = 'clang'
             //todo 指定cpu
             abiFilters.addAll(['armeabi', 'armeabi-v7a']) //this is default
             ldLibs.addAll([ 'log']);
