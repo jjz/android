@@ -13,5 +13,5 @@ public class NativeUtil {
 
     public static native void callJavaStaticMethodFromJni();
 
-    public static native void callJavaMethod();
+    public static native void callJavaMethodFromJni();
 }

@@ -3,10 +3,10 @@ package com.jjz;
 public class JniHandle {
 
     public static String getStringFromStatic() {
-        return "string from static method";
+        return "string from static method in java";
     }
 
     public String getStringForJava() {
-        return "string from method";
+        return "string from method in java";
     }
 }

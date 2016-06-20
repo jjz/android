@@ -51,14 +51,45 @@ Java_com_jjz_NativeUtil_callJavaStaticMethodFromJni(JNIEnv *env, jclass type) {
     }
     jstring result = (*env)->CallStaticObjectMethod(env, jniHandle, getStringFromStatic);
     const char *resultChar = (*env)->GetStringUTFChars(env, result, NULL);
+    (*env)->DeleteLocalRef(env, jniHandle);
+    (*env)->DeleteLocalRef(env, result);
     LOGW(resultChar);
 
 
 }
 
 JNIEXPORT void JNICALL
-Java_com_jjz_NativeUtil_callJavaMethod(JNIEnv *env, jclass type) {
+Java_com_jjz_NativeUtil_callJavaMethodFromJni(JNIEnv *env, jclass type) {
 
-    // TODO
+    jclass jniHandle = (*env)->FindClass(env, "com/jjz/JniHandle");
+    if (NULL == jniHandle) {
+        LOGW("can't find jniHandle");
+        return;
+    }
+    jmethodID constructor = (*env)->GetMethodID(env, jniHandle, "<init>", "()V");
+    if (NULL == constructor) {
+        LOGW("can't constructor JniHandle");
+        return;
+    }
+    jobject jniHandleObject = (*env)->NewObject(env, jniHandle, constructor);
+    if (NULL == jniHandleObject) {
+        LOGW("can't new JniHandle");
+        return;
+    }
+    jmethodID getStringForJava = (*env)->GetMethodID(env, jniHandle, "getStringForJava",
+                                                     "()Ljava/lang/String;");
+    if (NULL == getStringForJava) {
+        LOGW("can't find method of getStringForJava");
+        (*env)->DeleteLocalRef(env, jniHandle);
+        (*env)->DeleteLocalRef(env, jniHandleObject);
+        return;
+    }
+    jstring result = (*env)->CallObjectMethod(env, jniHandleObject, getStringForJava);
+    const char *resultChar = (*env)->GetStringUTFChars(env, result, NULL);
+    (*env)->DeleteLocalRef(env, jniHandle);
+    (*env)->DeleteLocalRef(env, jniHandleObject);
+    (*env)->DeleteLocalRef(env, result);
+    LOGW(resultChar);
+
 
 }

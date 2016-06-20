@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         NativeUtil.callLogFromJni();
 
          NativeUtil.callJavaStaticMethodFromJni();
+        NativeUtil.callJavaMethodFromJni();
 
 
     }
