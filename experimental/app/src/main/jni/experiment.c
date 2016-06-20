@@ -7,7 +7,6 @@
 #define LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 
 
-
 JNIEXPORT jstring JNICALL
 Java_com_jjz_NativeUtil_firstNative(JNIEnv *env, jclass type) {
     char chars[] = "i am test";
@@ -30,7 +29,36 @@ Java_com_jjz_NativeUtil_getRandom(JNIEnv *env, jclass type) {
 JNIEXPORT void JNICALL
 Java_com_jjz_NativeUtil_callLogFromJni(JNIEnv *env, jclass type) {
 
-    __android_log_print(ANDROID_LOG_INFO,"jni-log","from jni log");
+    __android_log_print(ANDROID_LOG_INFO, "jni-log", "from jni log");
     LOGW("log from  define");
+
+}
+
+JNIEXPORT void JNICALL
+Java_com_jjz_NativeUtil_callJavaStaticMethodFromJni(JNIEnv *env, jclass type) {
+
+    jclass jniHandle = (*env)->FindClass(env, "com/jjz/JniHandle");
+    if (NULL == jniHandle) {
+        LOGW("can't find JniHandle");
+        return;
+    }
+    jmethodID getStringFromStatic = (*env)->GetStaticMethodID(env, jniHandle, "getStringFromStatic",
+                                                              "()Ljava/lang/String;");
+    if (NULL == getStringFromStatic) {
+        (*env)->DeleteLocalRef(env, jniHandle);
+        LOGW("can't find method getStringFromStatic from JniHandle ");
+        return;
+    }
+    jstring result = (*env)->CallStaticObjectMethod(env, jniHandle, getStringFromStatic);
+    const char *resultChar = (*env)->GetStringUTFChars(env, result, NULL);
+    LOGW(resultChar);
+
+
+}
+
+JNIEXPORT void JNICALL
+Java_com_jjz_NativeUtil_callJavaMethod(JNIEnv *env, jclass type) {
+
+    // TODO
 
 }

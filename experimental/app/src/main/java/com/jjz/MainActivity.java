@@ -1,9 +1,8 @@
 package com.jjz;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
-import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(NativeUtil.firstNative());
         tv2.setText(Base64.encodeToString(NativeUtil.getRandom(), Base64.DEFAULT));
         NativeUtil.callLogFromJni();
+
+         NativeUtil.callJavaStaticMethodFromJni();
 
 
     }
