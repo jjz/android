@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <openssl/rand.h>
 
+
 #define LOG_TAG "jni-log"
 #define LOGW(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 

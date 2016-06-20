@@ -3,6 +3,12 @@ apply plugin: "com.android.model.application"
 model {
     repositories{
         libs(PrebuiltLibraries) {
+            jniLibrary{
+                headers.srcDir "lib/jni"
+                binaries.withType(SharedLibraryBinary){
+                    sharedLibraryFile=file("lib/${targetPlatform.getName()}/lib.so")
+                }
+            }
             // Configure one pre-built lib: static
             openssl {
                 // 头文件地址
@@ -46,6 +52,9 @@ model {
                 jniLibs{
                     source{
                         srcDir "libs/"
+                    }
+                    dependencies{
+                        library "jniLibrary"
                     }
                 }
                 java{
