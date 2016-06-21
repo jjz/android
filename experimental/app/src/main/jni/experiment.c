@@ -13,7 +13,7 @@ JNIEXPORT jstring JNICALL
 Java_com_jjz_NativeUtil_firstNative(JNIEnv *env, jclass type) {
     char chars[] = "i am test";
     int b = 1;
-    callMethodFromJniLib();
+
 
     return (*env)->NewStringUTF(env, chars);
 }
@@ -31,7 +31,7 @@ Java_com_jjz_NativeUtil_getRandom(JNIEnv *env, jclass type) {
 
 JNIEXPORT void JNICALL
 Java_com_jjz_NativeUtil_callLogFromJni(JNIEnv *env, jclass type) {
-
+    callMethodFromJniLib();
     __android_log_print(ANDROID_LOG_INFO, "jni-log", "from jni log");
     LOGW("log from  define");
 
