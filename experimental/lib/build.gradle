@@ -18,6 +18,16 @@ model {
             abiFilters.addAll(['armeabi', 'armeabi-v7a']) //this is default
             ldLibs.addAll(['android', 'log'])
         }
+        sources {
+            main {
+                jni {
+                    exportedHeaders {
+                        srcDir "src/main/jni"
+                    }
+                }
+            }
+        }
+
 
     }
 }

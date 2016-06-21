@@ -2,6 +2,7 @@
 #include <android/log.h>
 #include <stdio.h>
 #include <openssl/rand.h>
+#include <llib.h>
 
 
 #define LOG_TAG "jni-log"
@@ -12,6 +13,7 @@ JNIEXPORT jstring JNICALL
 Java_com_jjz_NativeUtil_firstNative(JNIEnv *env, jclass type) {
     char chars[] = "i am test";
     int b = 1;
+    callMethodFromJniLib();
 
     return (*env)->NewStringUTF(env, chars);
 }

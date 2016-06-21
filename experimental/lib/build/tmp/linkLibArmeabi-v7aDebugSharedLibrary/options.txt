@@ -1,0 +1,14 @@
+-shared
+-Wl,-soname,liblib.so
+-o
+/Users/jjz/Documents/github/android/experimental/lib/build/intermediates/binaries/debug/obj/armeabi-v7a/liblib.so
+/Users/jjz/Documents/github/android/experimental/lib/build/intermediates/objectFiles/armeabi-v7aDebugSharedLibrary/libMainC/5h6cmtb9gs3do9kpx6cltn0in/llib.o
+-Wl,--no-undefined
+-Wl,-z,noexecstack
+-Wl,-z,relro
+-Wl,-z,now
+--sysroot=/Users/jjz/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-arm
+-Wl,--build-id
+-no-canonical-prefixes
+-landroid
+-llog
