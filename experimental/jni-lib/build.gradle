@@ -14,7 +14,7 @@ model {
         }
 
         ndk {
-            moduleName = 'lib'
+            moduleName = 'jni-lib'
             abiFilters.addAll(['armeabi', 'armeabi-v7a']) //this is default
             ldLibs.addAll(['android', 'log'])
         }

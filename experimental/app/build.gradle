@@ -39,18 +39,17 @@ model {
                 jni {
                     dependencies{
                         library 'openssl' linkage 'static'
-                        project ':lib'
+                        project ':jni-lib'
                     }
                     source {
                         srcDir "src/main/jni"
-                        srcDir "../lib/src/main/jni"
+                        //srcDir "../lib/src/main/jni"
 
                     }
                 }
                 jniLibs{
                     source{
                         srcDir "libs/"
-//                        srcDir "../lib/libs"
                     }
 
                 }
