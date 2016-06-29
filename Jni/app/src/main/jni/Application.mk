@@ -1,2 +1,5 @@
 APP_MODULES := hello
 APP_ABI :=all
+
+#NDK_TOOLCHAIN :=clang
+NDK_TOOLCHAIN_VERSION :=obfuscator
