@@ -1,4 +1,0 @@
-See file:///Users/jjz/Documents/github/android/experimental/lib/build/tmp/linkLibArmeabi-v7aDebugSharedLibrary/output.txt for all output for linkLibArmeabi-v7aDebugSharedLibrary.
-linking liblib.so successful.
-
-Finished linkLibArmeabi-v7aDebugSharedLibrary, see full log file:///Users/jjz/Documents/github/android/experimental/lib/build/tmp/linkLibArmeabi-v7aDebugSharedLibrary/output.txt.

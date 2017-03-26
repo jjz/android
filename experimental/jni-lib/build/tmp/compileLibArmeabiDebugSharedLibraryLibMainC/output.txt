@@ -1,4 +1,0 @@
-See file:///Users/jjz/Documents/github/android/experimental/lib/build/tmp/compileLibArmeabiDebugSharedLibraryLibMainC/output.txt for all output for compileLibArmeabiDebugSharedLibraryLibMainC.
-compiling llib.c successful.
-
-Finished compileLibArmeabiDebugSharedLibraryLibMainC, see full log file:///Users/jjz/Documents/github/android/experimental/lib/build/tmp/compileLibArmeabiDebugSharedLibraryLibMainC/output.txt.
