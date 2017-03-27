@@ -9,3 +9,6 @@ Camera/.idea
 Camera/gradle/wrapper
 gradlew
 crash
+libhello.so
+*.o
+*.d
