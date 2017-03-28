@@ -12,7 +12,8 @@
 JNIEXPORT jstring JNICALL
 Java_com_jjz_NativeUtil_firstNative(JNIEnv *env, jclass type) {
     char chars[] = "i am test";
-    int p=1;
+    int p=0;
+    //p=1/0;
     return (*env)->NewStringUTF(env, chars);
 }
 
