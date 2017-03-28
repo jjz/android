@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.tv);
         TextView tv2 = (TextView) findViewById(R.id.tv_2);
         tv.setText(NativeUtil.firstNative());
-        tv2.setText(Base64.encodeToString(NativeUtil.getRandom(), Base64.DEFAULT));
-        NativeUtil.callLogFromJni();
-
-         NativeUtil.callJavaStaticMethodFromJni();
-        NativeUtil.callJavaMethodFromJni();
+//        tv2.setText(Base64.encodeToString(NativeUtil.getRandom(), Base64.DEFAULT));
+//        NativeUtil.callLogFromJni();
+//
+//         NativeUtil.callJavaStaticMethodFromJni();
+//        NativeUtil.callJavaMethodFromJni();
 
 
     }

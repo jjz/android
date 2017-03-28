@@ -7,11 +7,11 @@ public class NativeUtil {
 
     public static native String firstNative();
 
-    public static native byte[] getRandom();
-
-    public static native void callLogFromJni();
-
-    public static native void callJavaStaticMethodFromJni();
-
-    public static native void callJavaMethodFromJni();
+//    public static native byte[] getRandom();
+//
+//    public static native void callLogFromJni();
+//
+//    public static native void callJavaStaticMethodFromJni();
+//
+//    public static native void callJavaMethodFromJni();
 }
