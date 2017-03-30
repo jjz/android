@@ -4,7 +4,6 @@ model {
     repositories {
         libs(PrebuiltLibraries) {
 
-            // Configure one pre-built lib: static
             openssl {
                 // 头文件地址
                 headers.srcDir "/usr/local/ssl/android-23/include"
@@ -37,10 +36,10 @@ model {
         sources {
             main {
                 jni {
-//                    dependencies{
-//                        library 'openssl' linkage 'static'
+                    dependencies{
+                        library 'openssl' linkage 'static'
 //                        project ':jni-lib'
-//                    }
+                    }
                     source {
                         srcDir "src/main/jni"
                         //srcDir "../lib/src/main/jni"
