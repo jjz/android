@@ -5,18 +5,18 @@ model {
         libs(PrebuiltLibraries) {
 
             // Configure one pre-built lib: static
-//            openssl {
-//                // 头文件地址
-//                headers.srcDir "/usr/local/ssl/android-23/include"
-//                // 静态类库的引用,
-//                binaries.withType(StaticLibraryBinary) {
-//                    staticLibraryFile = file("libs/libcrypto.a")
+            openssl {
+                // 头文件地址
+                headers.srcDir "/usr/local/ssl/android-23/include"
+                // 静态类库的引用,
+                binaries.withType(StaticLibraryBinary) {
+                    staticLibraryFile = file("libs/libcrypto.a")
+                }
+                //动态类库的引用
+//                binaries.withType(SharedLibraryBinary) {
+//                    sharedLibraryFile = file("libs/libcrypto.so")
 //                }
-//                //动态类库的引用
-////                binaries.withType(SharedLibraryBinary) {
-////                    sharedLibraryFile = file("libs/libcrypto.so")
-////                }
-//            }
+            }
 
 
         }
@@ -26,6 +26,40 @@ model {
     android {
         compileSdkVersion 25
         buildToolsVersion "25.0.2"
+        ndk {
+            moduleName "clib"
+            //stl = 'gnustl_static'
+            //toolchain = 'clang'
+            //todo 指定cpu
+            abiFilters.addAll(['armeabi', 'armeabi-v7a']) //this is default
+            ldLibs.addAll([ 'log']);
+        }
+        sources {
+            main {
+                jni {
+//                    dependencies{
+//                        library 'openssl' linkage 'static'
+//                        project ':jni-lib'
+//                    }
+                    source {
+                        srcDir "src/main/jni"
+                        //srcDir "../lib/src/main/jni"
+
+                    }
+                }
+                jniLibs{
+                    source{
+                        srcDir "libs/"
+                    }
+
+                }
+                java{
+                    source{
+                        srcDir "src/main/java"
+                    }
+                }
+            }
+        }
         defaultConfig {
             applicationId "jjz.uselibrary"
             minSdkVersion.apiLevel 18
