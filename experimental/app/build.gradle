@@ -5,18 +5,18 @@ model {
         libs(PrebuiltLibraries) {
 
             // Configure one pre-built lib: static
-//            openssl {
-//                // 头文件地址
-//                headers.srcDir "/usr/local/ssl/android-23/include"
-//                // 静态类库的引用,
-//                binaries.withType(StaticLibraryBinary) {
-//                    staticLibraryFile = file("libs/libcrypto.a")
-//                }
+            openssl {
+                // 头文件地址
+                headers.srcDir "/usr/local/ssl/android-23/include"
+                // 静态类库的引用,
+                binaries.withType(StaticLibraryBinary) {
+                    staticLibraryFile = file("libs/libcrypto.a")
+                }
 //                //动态类库的引用
 ////                binaries.withType(SharedLibraryBinary) {
 ////                    sharedLibraryFile = file("libs/libcrypto.so")
 ////                }
-//            }
+            }
 
 
         }
@@ -37,10 +37,10 @@ model {
         sources {
             main {
                 jni {
-//                    dependencies{
-//                        library 'openssl' linkage 'static'
-//                        project ':jni-lib'
-//                    }
+                    dependencies{
+                        library 'openssl' linkage 'static'
+                        project ':jni-lib'
+                    }
                     source {
                         srcDir "src/main/jni"
                         //srcDir "../lib/src/main/jni"

@@ -13,3 +13,4 @@ libhello.so
 *.o
 *.d
 *.iml
+experimental/jni-lib/build/tmp

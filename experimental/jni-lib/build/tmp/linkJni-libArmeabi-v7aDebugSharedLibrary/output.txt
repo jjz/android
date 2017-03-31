@@ -1,4 +1,0 @@
-See file:///Users/jjz/Documents/github/android/experimental/jni-lib/build/tmp/linkJni-libArmeabi-v7aDebugSharedLibrary/output.txt for all output for linkJni-libArmeabi-v7aDebugSharedLibrary.
-linking libjni-lib.so successful.
-
-Finished linkJni-libArmeabi-v7aDebugSharedLibrary, see full log file:///Users/jjz/Documents/github/android/experimental/jni-lib/build/tmp/linkJni-libArmeabi-v7aDebugSharedLibrary/output.txt.
